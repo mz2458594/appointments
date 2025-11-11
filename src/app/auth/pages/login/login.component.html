@@ -1,0 +1,58 @@
+<div class="hero bg-base-200 min-h-screen">
+  <div class="hero-content flex-col lg:flex-col">
+    <div class="text-center">
+      <h1 class="text-5xl font-bold">Login now!</h1>
+      <p class="py-6">
+        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+        quasi. In deleniti eaque aut repudiandae et a id nisi.
+      </p>
+    </div>
+    <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+      <div class="card-body">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <fieldset class="fieldset">
+            <label class="label">Email</label>
+            <input type="email" class="input" placeholder="Email" formControlName="email" />
+
+            @if (formUtils.isValidField(loginForm, 'email')) {
+              <div role="alert" class="alert alert-error alert-soft mt-2">
+                <span>{{formUtils.getError(loginForm, 'email')}}</span>
+              </div>
+            }
+
+            <label class="label">Password</label>
+            <input type="password" class="input" placeholder="Password" formControlName="password" />
+
+
+            @if (formUtils.isValidField(loginForm, 'password')) {
+              <div role="alert" class="alert alert-error alert-soft mt-2">
+                <span>{{formUtils.getError(loginForm, 'password')}}</span>
+              </div>
+            }
+
+            <div><a class="link link-hover" [routerLink]="'/register'">No tiene cuenta?</a></div>
+            <button type="submit" class="btn btn-neutral mt-4">Login</button>
+          </fieldset>
+        </form>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+@if (hasError()) {
+<div role="alert" class="alert alert-error fixed top-5">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+  <span>Error! Task failed successfully.</span>
+</div>
+}
+
+
+<span>{{loginForm.controls['email'].errors| json}}</span>
+<span>{{loginForm.controls['password'].errors| json}}</span>
+
