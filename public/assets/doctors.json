@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "nombre": "Dr. Juan Pérez",
+    "especialidad": {
+      "id": 1,
+      "nombre": "Cardiología",
+      "descripcion": "Diagnóstico y tratamiento de enfermedades del corazón y el sistema circulatorio."
+    },
+    "foto": "https://example.com/fotos/juan_perez.jpg",
+    "experiencia": "10 años de experiencia en cardiología clínica y hospitalaria.",
+    "consultorio": "C201"
+  },
+  {
+    "id": 2,
+    "nombre": "Dra. María Gómez",
+    "especialidad": {
+      "id": 2,
+      "nombre": "Dermatología",
+      "descripcion": "Atención médica de enfermedades de la piel, cabello y uñas."
+    },
+    "foto": "https://example.com/fotos/maria_gomez.jpg",
+    "experiencia": "8 años tratando afecciones dermatológicas en adultos y niños.",
+    "consultorio": "B105"
+  },
+  {
+    "id": 3,
+    "nombre": "Dr. Luis Herrera",
+    "especialidad": {
+      "id": 3,
+      "nombre": "Pediatría",
+      "descripcion": "Cuidado médico de niños y adolescentes."
+    },
+    "foto": "https://example.com/fotos/luis_herrera.jpg",
+    "experiencia": "12 años de experiencia en pediatría general y neonatal.",
+    "consultorio": "A303"
+  },
+  {
+    "id": 4,
+    "nombre": "Dra. Sofía Rojas",
+    "especialidad": {
+      "id": 4,
+      "nombre": "Oftalmología",
+      "descripcion": "Diagnóstico y tratamiento de problemas visuales y enfermedades oculares."
+    },
+    "foto": "https://example.com/fotos/sofia_rojas.jpg",
+    "experiencia": "9 años especializada en cirugía ocular y corrección visual.",
+    "consultorio": "D102"
+  },
+  {
+    "id": 5,
+    "nombre": "Dr. Carlos Vega",
+    "especialidad": {
+      "id": 5,
+      "nombre": "Odontología",
+      "descripcion": "Prevención y tratamiento de enfermedades dentales y de las encías."
+    },
+    "foto": "https://example.com/fotos/carlos_vega.jpg",
+    "experiencia": "11 años de experiencia en odontología general y estética dental.",
+    "consultorio": "E205"
+  }
+]

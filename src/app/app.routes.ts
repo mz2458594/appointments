@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { notAuthenticatedGuard } from './auth/guard/not-authenticated.guard';
+import { isAdminGuard } from './auth/guard/auth.guard';
 
 export const routes: Routes = [
   {
@@ -19,7 +20,9 @@ export const routes: Routes = [
   {
     path: 'intranet',
     loadChildren: () => import('./intranet/intranet.routes'),
-
+    canMatch: [
+      isAdminGuard
+    ]
   },
   {
     path: '**',

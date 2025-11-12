@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "nombre": "Cardiología",
+    "descripcion": "Diagnóstico y tratamiento de enfermedades del corazón y el sistema circulatorio."
+  },
+  {
+    "id": 2,
+    "nombre": "Dermatología",
+    "descripcion": "Atención médica de enfermedades de la piel, cabello y uñas."
+  },
+  {
+    "id": 3,
+    "nombre": "Pediatría",
+    "descripcion": "Cuidado médico de niños y adolescentes."
+  },
+  {
+    "id": 4,
+    "nombre": "Oftalmología",
+    "descripcion": "Diagnóstico y tratamiento de problemas visuales y enfermedades oculares."
+  },
+  {
+    "id": 5,
+    "nombre": "Odontología",
+    "descripcion": "Prevención y tratamiento de enfermedades dentales y de las encías."
+  }
+]

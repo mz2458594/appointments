@@ -10,7 +10,7 @@ export const isAdminGuard: CanMatchFn = (route, segments) => {
   const isAdmin = service.isAdmin()
 
   if (!isAdmin) {
-    router.navigateByUrl('/')
+    router.navigateByUrl('/login')
     return false
   }
 

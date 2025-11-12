@@ -7,7 +7,9 @@ import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
-  imports: [RouterLink, ReactiveFormsModule, JsonPipe],
+  imports: [RouterLink, ReactiveFormsModule,
+    // JsonPipe
+  ],
   templateUrl: './register.component.html',
 })
 export default class RegisterComponent {

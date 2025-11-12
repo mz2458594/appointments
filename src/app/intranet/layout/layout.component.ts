@@ -4,7 +4,7 @@ import { AuthService } from "../../auth/services/auth.service";
 
 @Component({
   templateUrl: './layout.component.html',
-  imports: [RouterOutlet, RouterLinkWithHref, RouterLinkActive]
+  imports: [RouterOutlet, RouterLinkWithHref]
 })
 export default class LayoutComponent {
 

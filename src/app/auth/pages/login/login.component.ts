@@ -8,7 +8,9 @@ import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, RouterLink, JsonPipe],
+  imports: [ReactiveFormsModule, RouterLink,
+    // JsonPipe
+  ],
   templateUrl: './login.component.html',
 })
 export default class LoginComponent {
@@ -44,6 +46,7 @@ export default class LoginComponent {
     this.authService.login(email!, password!).subscribe(response => {
       console.log('Response: ', response)
       if (response) {
+        console.log(true)
         this.router.navigateByUrl('/intranet')
         return;
       }

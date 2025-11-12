@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "doctor": {
+      "id": 101,
+      "nombre": "Dr. Carlos Ramírez",
+      "especialidad": {
+        "id": 1,
+        "nombre": "Medicina General",
+        "descripcion": "Consultas médicas generales y chequeos preventivos."
+      },
+      "foto": "https://example.com/medicos/carlos-ramirez.jpg",
+      "experiencia": "10 años de experiencia en medicina familiar",
+      "consultorio": "A1"
+    },
+    "especialidad": {
+      "id": 1,
+      "nombre": "Medicina General",
+      "descripcion": "Consultas médicas generales y chequeos preventivos."
+    },
+    "foto": "https://example.com/medicos/carlos-ramirez.jpg",
+    "experiencia": "10 años de experiencia en medicina familiar",
+    "consultorio": "A1",
+    "fecha": "2025-11-14",
+    "hora": "09:00",
+    "estado": true
+  },
+  {
+    "id": 2,
+    "doctor": {
+      "id": 102,
+      "nombre": "Dra. Ana Torres",
+      "especialidad": {
+        "id": 2,
+        "nombre": "Pediatría",
+        "descripcion": "Atención médica especializada para niños y adolescentes."
+      },
+      "foto": "https://example.com/medicos/ana-torres.jpg",
+      "experiencia": "8 años atendiendo pacientes pediátricos",
+      "consultorio": "B3"
+    },
+    "especialidad": {
+      "id": 2,
+      "nombre": "Pediatría",
+      "descripcion": "Atención médica especializada para niños y adolescentes."
+    },
+    "foto": "https://example.com/medicos/ana-torres.jpg",
+    "experiencia": "8 años atendiendo pacientes pediátricos",
+    "consultorio": "B3",
+    "fecha": "2025-11-14",
+    "hora": "10:30",
+    "estado": false
+  },
+  {
+    "id": 3,
+    "doctor": {
+      "id": 103,
+      "nombre": "Dr. Luis Paredes",
+      "especialidad": {
+        "id": 3,
+        "nombre": "Dermatología",
+        "descripcion": "Diagnóstico y tratamiento de enfermedades de la piel."
+      },
+      "foto": "https://example.com/medicos/luis-paredes.jpg",
+      "experiencia": "12 años en dermatología clínica y estética",
+      "consultorio": "C2"
+    },
+    "especialidad": {
+      "id": 3,
+      "nombre": "Dermatología",
+      "descripcion": "Diagnóstico y tratamiento de enfermedades de la piel."
+    },
+    "foto": "https://example.com/medicos/luis-paredes.jpg",
+    "experiencia": "12 años en dermatología clínica y estética",
+    "consultorio": "C2",
+    "fecha": "2025-11-15",
+    "hora": "11:00",
+    "estado": true
+  },
+  {
+    "id": 4,
+    "doctor": {
+      "id": 104,
+      "nombre": "Dra. Mariela Huamán",
+      "especialidad": {
+        "id": 4,
+        "nombre": "Cardiología",
+        "descripcion": "Evaluación y tratamiento de enfermedades del corazón."
+      },
+      "foto": "https://example.com/medicos/mariela-huaman.jpg",
+      "experiencia": "15 años en cardiología intervencionista",
+      "consultorio": "D1"
+    },
+    "especialidad": {
+      "id": 4,
+      "nombre": "Cardiología",
+      "descripcion": "Evaluación y tratamiento de enfermedades del corazón."
+    },
+    "foto": "https://example.com/medicos/mariela-huaman.jpg",
+    "experiencia": "15 años en cardiología intervencionista",
+    "consultorio": "D1",
+    "fecha": "2025-11-15",
+    "hora": "15:00",
+    "estado": false
+  },
+  {
+    "id": 5,
+    "doctor": {
+      "id": 105,
+      "nombre": "Dr. Pedro Gutiérrez",
+      "especialidad": {
+        "id": 5,
+        "nombre": "Odontología",
+        "descripcion": "Servicios dentales y tratamientos de salud bucal."
+      },
+      "foto": "https://example.com/medicos/pedro-gutierrez.jpg",
+      "experiencia": "7 años en odontología general y estética",
+      "consultorio": "E4"
+    },
+    "especialidad": {
+      "id": 5,
+      "nombre": "Odontología",
+      "descripcion": "Servicios dentales y tratamientos de salud bucal."
+    },
+    "foto": "https://example.com/medicos/pedro-gutierrez.jpg",
+    "experiencia": "7 años en odontología general y estética",
+    "consultorio": "E4",
+    "fecha": "2025-11-16",
+    "hora": "13:30",
+    "estado": true
+  }
+]
