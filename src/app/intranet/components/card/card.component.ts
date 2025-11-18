@@ -7,5 +7,5 @@ import { Component, input } from '@angular/core';
 })
 export class CardComponent {
   title = input.required()
-  
+  descripcion = input.required()
 }

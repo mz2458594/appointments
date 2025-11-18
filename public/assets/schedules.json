@@ -2,7 +2,7 @@
   {
     "id": 1,
     "doctor": {
-      "id": 101,
+      "id": 1,
       "nombre": "Dr. Carlos Ramírez",
       "especialidad": {
         "id": 1,
@@ -28,7 +28,7 @@
   {
     "id": 2,
     "doctor": {
-      "id": 102,
+      "id": 2,
       "nombre": "Dra. Ana Torres",
       "especialidad": {
         "id": 2,
@@ -54,7 +54,7 @@
   {
     "id": 3,
     "doctor": {
-      "id": 103,
+      "id": 3,
       "nombre": "Dr. Luis Paredes",
       "especialidad": {
         "id": 3,
@@ -80,7 +80,7 @@
   {
     "id": 4,
     "doctor": {
-      "id": 104,
+      "id": 4,
       "nombre": "Dra. Mariela Huamán",
       "especialidad": {
         "id": 4,
@@ -106,7 +106,7 @@
   {
     "id": 5,
     "doctor": {
-      "id": 105,
+      "id": 5,
       "nombre": "Dr. Pedro Gutiérrez",
       "especialidad": {
         "id": 5,

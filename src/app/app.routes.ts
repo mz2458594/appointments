@@ -20,9 +20,7 @@ export const routes: Routes = [
   {
     path: 'intranet',
     loadChildren: () => import('./intranet/intranet.routes'),
-    canMatch: [
-      isAdminGuard
-    ]
+    
   },
   {
     path: '**',

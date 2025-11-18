@@ -34,7 +34,7 @@ export class AuthService {
   isAdmin = computed(() => this.user()?.role.includes('admin') ?? false)
 
   registrer(){
-    
+
   }
 
 
@@ -87,3 +87,4 @@ export class AuthService {
   }
 
 }
+

@@ -2,63 +2,145 @@
   <div class="card rounded-box grid h-20 place-items-center">
     <div>
       <ul class="steps">
-        <li class="step" [class.step-primary]="step() === 1 || step() === 2 || step() === 3">Escoger especialidad o servicio</li>
-        <li class="step" [class.step-primary]="step() === 2 || step() === 3">Seleccionar Médico</li>
-        <li class="step"[class.step-primary]="step() === 3">Separar tu turno</li>
+        <li class="step" [class.step-primary]="step() === 1 || step() === 2 || step() === 3 || step() === 4">Escoger especialidad o
+          servicio</li>
+        <li class="step" [class.step-primary]="step() === 2 || step() === 3 || step() === 4">Seleccionar Médico</li>
+        <li class="step" [class.step-primary]="step() === 3 || step() === 4">Separar tu turno</li>
+        <li class="step" [class.step-primary]="step() === 4">Confirmación</li>
       </ul>
 
     </div>
   </div>
   <div class="divider"></div>
+  <form [formGroup]="reserveForm">
+    <div class="flex flex-col bg-base-300 rounded-box h-full gap-10 py-5 justify-center items-center">
 
-  @if (step() === 1) {
-    <div class="card bg-base-300 rounded-box grid h-full  place-items-center gap-10 py-5">
-    <div class="join">
-      <input class="join-item btn" type="radio" name="options" aria-label="Por médico" />
-      <input class="join-item btn" type="radio" name="options" aria-label="Por especialidad" />
-      <label class="input">
-        <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.3-4.3"></path>
-          </g>
-        </svg>
-        <input type="search" class="grow" placeholder="Search" />
-        <kbd class="kbd kbd-sm">⌘</kbd>
-        <kbd class="kbd kbd-sm">K</kbd>
-      </label>
-      <button (click)="changeStep()">Cambiar de paso</button>
-    </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 px-10 ">
-
-      <card title="marcos"/>
-      @for (item of specialtyResource.value(); track $index) {
-        <span>Una especialidad</span>
-      } @empty {
-        <span>No hay especialidades</span>
+      @if (step()!= 1) {
+      <button class="btn btn-secondary" (click)="goBack()">Volver</button>
       }
 
+      @if (step() === 1) {
+      <div class="join flex flex-row justify-around w-full">
+        <div>
+          <input class="join-item btn" type="radio" name="options" aria-label="Por médico" checked />
+          <input class="join-item btn" type="radio" name="options" aria-label="Por especialidad" />
+        </div>
+        <label class="input">
+          <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </g>
+          </svg>
+          <input type="search" class="grow" placeholder="Search" (keyup)="specialtyFilter(search.value)" #search />
+          <kbd class="kbd kbd-sm">⌘</kbd>
+          <kbd class="kbd kbd-sm">K</kbd>
+        </label>
+      </div>
+
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 px-10">
+
+        @for (item of filterValue(); track $index) {
+        <div (click)="getDoctors(item.id)">
+          <card [title]="item.nombre" [descripcion]="item.descripcion" />
+        </div>
+        } @empty {
+        <span>No hay especialidades</span>
+        }
+
+      </div>
+
+      }
+
+
+      @if (step() === 2) {
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 px-10">
+
+
+        @for (item of doctors(); track $index) {
+        <div (click)="getShedules(item.id)">
+          <card [title]="item.nombre" [descripcion]="item.experiencia" />
+        </div>
+        } @empty {
+        <span>No hay doctores</span>
+        }
+      </div>
+      }
+
+      @if (step() === 3) {
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 px-10">
+
+        @for (item of schedules(); track $index) {
+        <div (click)="reserveForm.get('schedule')?.setValue(item)">
+          <card [title]="item.fecha" [descripcion]="item.doctor.nombre" />
+        </div>
+        } @empty {
+        <span>No hay horarios</span>
+        }
+      </div>
+      }
+
+
+
+
+
+      @if (step() === 4) {
+      <div class="card bg-base-100 shadow-sm border border-info">
+        <div class="card-body">
+          <h2 class="badge badge-info badge-lg text-2xs">Resumen de la reservación</h2>
+          <ul class="mt-6 flex flex-col gap-2 text-xs">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Especialidad: {{reserveForm.controls['schedule'].value?.especialidad?.nombre}} </span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Doctor: {{reserveForm.controls['schedule'].value?.doctor?.nombre}} </span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Fecha: {{reserveForm.controls['schedule'].value?.fecha}} </span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Hora: {{reserveForm.controls['schedule'].value?.hora}} </span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Bloque: {{reserveForm.controls['schedule'].value?.consultorio}} </span>
+            </li>
+          </ul>
+          <div class="mt-6">
+            <button class="btn btn-primary btn-block">Confirmar</button>
+          </div>
+        </div>
+      </div>
+      }
+
+
+
+
     </div>
-  </div>
-  }
-
-  @if (step() === 2) {
-    <div>
-      <span>Paso 2</span>
-      <button (click)="changeStep()">Cambiar de paso</button>
-
-    </div>
-  }
-
-
-  @if (step() === 3) {
-    <div>
-      <span>Paso 3</span>
-      <button (click)="changeStep()">Cambiar de paso</button>
-
-    </div>
-  }
-
-
+  </form>
 </div>
+
+<span>
+  {{reserveForm.value | json}}
+</span>
